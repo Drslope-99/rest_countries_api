@@ -1,0 +1,50 @@
+:root {
+  /* dark blue colors */
+  --blue-900: hsl(209, 23%, 22%);
+  --blue-950: hsl(207, 26%, 17%); /* grey colors */
+  --color-text: hsl(200, 15%, 8%);
+  --color-text-2: hsl(0, 0%, 50%);
+  --color-bg: hsl(0, 0%, 99%);
+  --color-bg-2: hsl(0, 100%, 100%);
+
+  --layout-width: 148rem;
+  --layout-padding: clamp(1rem, 4vw, 3rem);
+}
+
+[data-theme="dark"] {
+  --color-bg: hsl(207, 26%, 17%);
+  --white: hsl(0, 0%, 10%);
+  --color-bg-2: hsl(209, 23%, 22%);
+  --color-text: hsl(0, 100%, 100%);
+  --color-text-2: hsl(0, 0%, 80%);
+
+  background-color: var(--blue-950);
+  color: var(--white);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  min-height: 100dvh;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.section {
+  max-width: var(--layout-width);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
