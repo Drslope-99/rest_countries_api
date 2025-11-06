@@ -1,0 +1,14 @@
+.container {
+  max-width: var(--layout-width);
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: var(--layout-padding);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}

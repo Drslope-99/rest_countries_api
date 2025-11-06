@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import { IoMoon } from "react-icons/io5";
 import { useTheme } from "../hook/useTheme";
 
-export default function Header() {
+export default function Header({ children }) {
   const { theme, toggleTheme } = useTheme();
 
   return (

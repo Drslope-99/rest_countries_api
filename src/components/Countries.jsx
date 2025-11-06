@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./Countries.module.css";
 import CountryCard from "./CountryCard";
+import { memo } from "react";
 
-export default function Countries({ countries, isLoading }) {
+function Countries({ countries, isLoading }) {
   return (
     <section className={styles.container}>
       {isLoading ? (
@@ -21,3 +22,5 @@ export default function Countries({ countries, isLoading }) {
     </section>
   );
 }
+
+export default memo(Countries);

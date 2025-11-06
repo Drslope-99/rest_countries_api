@@ -50,3 +50,9 @@
   font-weight: 600;
   text-transform: capitalize;
 }
+
+.searchComponents {
+  max-width: var(--layout-width);
+  display: flex;
+  justify-content: space-between;
+}

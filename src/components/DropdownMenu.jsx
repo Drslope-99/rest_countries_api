@@ -2,17 +2,15 @@ import React, { useState, useMemo } from "react";
 import styles from "./DropdownMenu.module.css";
 import { PiCaretDownBold } from "react-icons/pi";
 
-function DropdownMenu({ countries }) {
+function DropdownMenu({ countries, region, setRegion }) {
   const [toggle, setToggle] = useState(false);
-  const [region, setRegion] = useState("");
 
   const handleToggle = () => {
     setToggle((prev) => !prev);
   };
 
   const regions = useMemo(() => {
-    console.log("drop down");
-    return [...new Set(countries.map((country) => country.region))];
+    return [...new Set(countries.map((c) => c.region))];
   }, [countries]);
 
   return (
