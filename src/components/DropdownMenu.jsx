@@ -24,6 +24,9 @@ function DropdownMenu({ countries, region, setRegion }) {
       </button>
       {toggle && (
         <ul className={styles.dropdownMenu} role="listbox">
+          <li role="option" key={"all"} onClick={() => setRegion("")}>
+            All
+          </li>
           {regions.map((reg) => (
             <li role="option" key={reg} onClick={() => setRegion(reg)}>
               {reg}
