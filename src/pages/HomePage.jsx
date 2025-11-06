@@ -2,6 +2,7 @@ import Countries from "../components/Countries";
 import Header from "../components/Header";
 import DropdownMenu from "../components/DropdownMenu";
 import SearchInput from "../components/SearchInput";
+import { useState } from "react";
 
 export default function HomePage({ data, isLoading }) {
   return (

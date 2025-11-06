@@ -1,10 +1,23 @@
 import { useParams, Link } from "react-router-dom";
 import styles from "./CountryDetails.module.css";
 
-export default function CountryDetails({ countries }) {
+export default function CountryDetails({ countries, isLoading }) {
   const { countryCode } = useParams();
+
+  if (isLoading || !countries) {
+    return <CountryDetailsSkeleton />;
+  }
+
   const country = countries?.find((c) => c.alpha3Code === countryCode);
-  console.log(country.borders);
+
+  if (!country) {
+    return <CountryDetailsSkeleton />;
+  }
+
+  const countryMap = {};
+  countries?.forEach((c) => {
+    countryMap[c.alpha3Code] = c.name;
+  });
 
   return (
     <section className={styles.container}>
@@ -56,10 +69,50 @@ export default function CountryDetails({ countries }) {
             {country.borders
               ? country.borders.map((c) => (
                   <Link to={`/${c}`} key={c} className={styles.linkBtn}>
-                    {c}
+                    {countryMap[c]}
                   </Link>
                 ))
               : ""}
+          </div>
+        </aside>
+      </article>
+    </section>
+  );
+}
+
+function CountryDetailsSkeleton() {
+  return (
+    <section className={styles.container}>
+      <figure className={styles.imgContainer}>
+        <div className={styles.skeletonImg}></div>
+      </figure>
+
+      <article className={styles.countryDetails}>
+        <div className={styles.skeletonTitle}></div>
+
+        <div className={styles.skeletonDetail}>
+          <ul>
+            <li className={styles.skeletonText}></li>
+            <li className={styles.skeletonText}></li>
+            <li className={styles.skeletonText}></li>
+            <li className={styles.skeletonText}></li>
+            <li className={styles.skeletonText}></li>
+          </ul>
+
+          <ul>
+            <li className={styles.skeletonText}></li>
+            <li className={styles.skeletonText}></li>
+            <li className={styles.skeletonText}></li>
+          </ul>
+        </div>
+
+        <aside className={styles.border}>
+          <p className={styles.skeletonPill}></p>
+          <div className={styles.borders}>
+            <div className={styles.skeletonPill}></div>
+            <div className={styles.skeletonPill}></div>
+            <div className={styles.skeletonPill}></div>
+            <div className={styles.skeletonPill}></div>
           </div>
         </aside>
       </article>

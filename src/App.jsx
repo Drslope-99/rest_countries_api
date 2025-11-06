@@ -16,7 +16,9 @@ export default function App() {
         />
         <Route
           path="/:countryCode"
-          element={<CountryDetailsPage countries={countries} />}
+          element={
+            <CountryDetailsPage countries={countries} isLoading={isLoading} />
+          }
         />
       </Routes>
     </BrowserRouter>

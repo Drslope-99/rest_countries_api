@@ -13,6 +13,7 @@ export default function useFetch() {
           throw new Error("Something went wrong, failed to fetch");
 
         const data = await response.json();
+
         setCountries(data);
       } catch (error) {
         console.log(error);
