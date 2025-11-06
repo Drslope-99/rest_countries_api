@@ -19,6 +19,11 @@
   padding-inline: var(--layout-padding);
 }
 
+.headerLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 .themeControl {
   display: inline-flex;
   align-items: center;
