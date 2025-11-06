@@ -1,8 +1,11 @@
 import { IoMoonOutline } from "react-icons/io5";
 import styles from "./Header.module.css";
 import { IoMoon } from "react-icons/io5";
+import { useTheme } from "../hook/useTheme";
 
-export default function Header({ theme, toggleTheme }) {
+export default function Header() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>

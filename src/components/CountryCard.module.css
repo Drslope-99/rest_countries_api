@@ -1,7 +1,8 @@
 .country {
-  max-width: 35rem;
-  height: 38rem;
+  max-width: 36rem;
+  height: 40rem;
   display: grid;
+  justify-self: center;
   grid-template-rows: 1fr 1fr;
   background-color: var(--color-bg-2);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;

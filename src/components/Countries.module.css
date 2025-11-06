@@ -2,8 +2,13 @@
   max-width: var(--layout-width);
   margin: 0 auto;
   display: grid;
-  gap: 3rem;
+  gap: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   justify-content: space-between;
   padding-inline: var(--layout-padding);
+}
+
+.link {
+  text-decoration: "none";
+  color: "inherit";
 }

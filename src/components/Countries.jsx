@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Countries.module.css";
 import CountryCard from "./CountryCard";
 
@@ -8,7 +9,13 @@ export default function Countries({ countries, isLoading }) {
         <p>Loading...</p>
       ) : (
         countries.map((country) => (
-          <CountryCard country={country} key={country.name} />
+          <Link
+            to={`/${country.alpha3Code}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+            key={country.name}
+          >
+            <CountryCard country={country} />
+          </Link>
         ))
       )}
     </section>
